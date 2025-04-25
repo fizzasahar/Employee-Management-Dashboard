@@ -16,11 +16,16 @@ const userSchema = new mongoose.Schema(
 			type: mongoose.Schema.Types.String,
 			required: true,
 		},
-		
+
 		isCustomer: {
 			type: Boolean,
 			default: false,
 		},
+		gender: String,
+		role: {
+			type: String,
+			default: 'employee'
+		}
 	},
 	{
 		timestamps: {
