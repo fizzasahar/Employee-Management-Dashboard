@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
 const Leaves = () => {
   const [reason, setReason] = useState("");
   const [status, setStatus] = useState("");
@@ -8,7 +8,7 @@ const Leaves = () => {
 
   const applyLeave = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/api/leaves", {
+      const response = await axios.post(`${apiUrl}api/leaves/${userId}`, {
         userId,
         reason
       });

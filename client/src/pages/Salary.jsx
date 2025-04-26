@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
 const Salary = () => {
   const [salaryData, setSalaryData] = useState(null);
   const [error, setError] = useState(null);
@@ -10,7 +10,7 @@ const Salary = () => {
   useEffect(() => {
     const fetchSalary = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/salary/${userId}`);
+        const res = await axios.get(`${apiUrl}/api/salary/${userId}`);
         setSalaryData(res.data);
       } catch (err) {
         console.error("Error fetching salary:", err);

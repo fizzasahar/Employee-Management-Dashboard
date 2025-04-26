@@ -16,7 +16,7 @@ app.use(
     cors({
         origin: ['http://localhost:5174',
             'http://localhost:5173',
-            'https://employee-management-dashboard-eta.vercel.app/',
+            'https://employee-management-dashboard-eta.vercel.app',
 
         ],
         methods: ['GET', 'PUT', 'POST', 'DELETE'],
