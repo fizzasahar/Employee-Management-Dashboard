@@ -39,6 +39,10 @@ const Login = () => {
                 body: JSON.stringify(formData),
             });
 
+            if (!response.ok) {
+                throw new Error("signup failed. Server responded with " + response.status);
+              }
+              
             const data = await response.json();
             setLoading(false);
             if (response.ok) {

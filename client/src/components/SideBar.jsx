@@ -1,8 +1,11 @@
-// components/Sidebar.js
-import { FaHome, FaCalendarCheck, FaUser, FaMoneyBill, FaSignOutAlt, FaSuitcase } from "react-icons/fa";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-
+import { FaHome, FaUser, FaSignOutAlt, FaCalendarCheck, FaSuitcase, FaMoneyBill } from "react-icons/fa";
 const Sidebar = () => {
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+
+  if (!isAuthenticated) return null; // agar login nahi, to sidebar mat dikhao
+
   return (
     <div className="fixed md:static top-0 left-0 h-full w-64 bg-black text-white p-5 flex flex-col">
       <h2 className="text-2xl font-bold mb-6 text-orange-500">Employee Panel</h2>
