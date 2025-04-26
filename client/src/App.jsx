@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; 
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Sidebar from "./components/SideBar";
 import Dashboard from "./components/Dashboard";
@@ -8,7 +8,8 @@ import CheckIn from "./pages/Check-In-Out";
 import Leaves from "./pages/Leaves";
 import Profile from "./pages/Profile";
 import Salary from "./pages/Salary";
-import ProtectedRoute from './components/ProtectedRoute'; // import karo
+import Logout from "./pages/Logout"; // ✅ yeh import karo
+import ProtectedRoute from './components/ProtectedRoute';
 import { ToastContainer } from 'react-toastify';
 import { useSelector } from 'react-redux';
 import 'react-toastify/dist/ReactToastify.css';
@@ -28,7 +29,7 @@ const App = () => {
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-
+          
           {/* Protected Routes */}
           <Route path="/dashboard" element={
             <ProtectedRoute><Dashboard /></ProtectedRoute>
@@ -45,6 +46,9 @@ const App = () => {
           <Route path="/salary" element={
             <ProtectedRoute><Salary /></ProtectedRoute>
           } />
+
+          {/* 🔥 Logout Route */}
+          <Route path="/logout" element={<Logout />} /> {/* ✅ Add this */}
         </Routes>
       </div>
     </>

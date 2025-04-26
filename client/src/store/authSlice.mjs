@@ -15,11 +15,15 @@ export const authSlice = createSlice({
        state.userId = action.payload.userId;
        state.isAuthenticated = true
     },
+    
     logout: (state) => {
-        localStorage.removeItem("token")
-        localStorage.removeItem("userId")
-        state.isAuthenticated = false
-    },
+      localStorage.removeItem("token");
+      localStorage.removeItem("userId");
+      state.token = null;
+      state.userId = null;
+      state.isAuthenticated = false;
+    }
+    
   },
 });
 

@@ -54,7 +54,7 @@ const Login = () => {
                 }))
                 toast.success(data.message);
 
-                navigate('/');
+                navigate('/dashboard');
             } else {
                 toast.error(data.message || 'Invalid email or password');
             }
